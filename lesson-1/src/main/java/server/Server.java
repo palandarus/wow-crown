@@ -8,13 +8,11 @@ import java.util.ArrayList;
 
 @Component
 public class Server {
+    @Autowired
     AuthService authService;
 
     public static void main(String[] args) {
         ArrayList list=new ArrayList();
     }
-@Autowired
-    public Server(AuthService authService) {
-        this.authService = authService;
-    }
+
 }
