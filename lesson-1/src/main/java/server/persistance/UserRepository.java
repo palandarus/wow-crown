@@ -1,5 +1,7 @@
 package server.persistance;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import server.User;
 
 import javax.sql.DataSource;
@@ -7,10 +9,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+@Repository
 public class UserRepository {
+
 
     private final Connection conn;
 
+    @Autowired
     public UserRepository(DataSource dataSource) throws SQLException {
         this(dataSource.getConnection());
     }
